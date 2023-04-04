@@ -33,8 +33,8 @@ class TestHotel(object):
         email_input = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.ID, 'email')))
         password_input = self.browser.find_element(By.ID, 'password')
         login_btn = self.browser.find_element(By.CSS_SELECTOR, 'button[name="submit"]')
-        email_input.send_keys('andi.teszt2021@gmail.com')
-        password_input.send_keys('tesztelek2021')
+        email_input.send_keys('user@teszt.com')
+        password_input.send_keys('123456')
         login_btn.click()
         profile_id = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.ID, 'profile')))
-        assert profile_id.text == "Profilom (Andrea)"
+        assert profile_id.text == "Profilom (User)"
